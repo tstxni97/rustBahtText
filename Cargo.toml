@@ -1,0 +1,14 @@
+[package]
+name = "rust_baht_text"
+version = "0.1.0"
+edition = "2021"
+authors = ["Deeprom <grooveeeeee@gmail.com>"]
+description = "Convert number to Thai Baht text"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/tstxni97/rustBahtText"
+homepage = "https://github.com/tstxni97/rustBahtText"
+keywords = ["thai", "baht", "text", "number"]
+
+[dependencies]
+lazy_static = "1.4.0"

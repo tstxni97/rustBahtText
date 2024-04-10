@@ -154,205 +154,205 @@ mod tests {
     #[test]
     fn test_bath_text() {
         let bath_text = "หนึ่งร้อยบาทยี่สิบห้าสตางค์";
-        assert_eq!(bath_text, crate::baht_text::baht_text::baht_text(100.25)); // Update the function call to use the crate
+        assert_eq!(bath_text, crate::baht_text(100.25)); // Update the function call to use the crate
     }
 
     #[test]
     fn test_input_is_a_number_and_convert_to_string() {
         let bath_text = "ห้าสิบบาทถ้วน";
-        assert_eq!(bath_text, crate::baht_text::baht_text::baht_text(50.0)); // Update the function call to use the crate
+        assert_eq!(bath_text, crate::baht_text(50.0)); // Update the function call to use the crate
     }
 
     #[test]
     fn test_input_integer_one_digit_can_convert() {
-        let result = crate::baht_text::baht_text::baht_text(0.0);
+        let result = crate::baht_text(0.0);
         assert_eq!(result, "ศูนย์บาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(1.00);
+        let result = crate::baht_text(1.00);
         assert_eq!(result, "หนึ่งบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(2.0);
+        let result = crate::baht_text(2.0);
         assert_eq!(result, "สองบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(5.00);
+        let result = crate::baht_text(5.00);
         assert_eq!(result, "ห้าบาทถ้วน");
     }
 
     #[test]
     fn test_number_in_multiple_could_show_word_sip() {
-        let result = crate::baht_text::baht_text::baht_text(10.0);
+        let result = crate::baht_text(10.0);
         assert_eq!(result, "สิบบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(20.0);
+        let result = crate::baht_text(20.0);
         assert_eq!(result, "ยี่สิบบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(30.0);
+        let result = crate::baht_text(30.0);
         assert_eq!(result, "สามสิบบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(40.0);
+        let result = crate::baht_text(40.0);
         assert_eq!(result, "สี่สิบบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(50.0);
+        let result = crate::baht_text(50.0);
         assert_eq!(result, "ห้าสิบบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(11.0);
+        let result = crate::baht_text(11.0);
         assert_eq!(result, "สิบเอ็ดบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(21.0);
+        let result = crate::baht_text(21.0);
         assert_eq!(result, "ยี่สิบเอ็ดบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(32.0);
+        let result = crate::baht_text(32.0);
         assert_eq!(result, "สามสิบสองบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(15.0);
+        let result = crate::baht_text(15.0);
         assert_eq!(result, "สิบห้าบาทถ้วน");
 
     }
 
     #[test]
     fn test_input_one_integer_with_decimal_can_convert() {
-        let result = crate::baht_text::baht_text::baht_text(1.10);
+        let result = crate::baht_text(1.10);
         assert_eq!(result, "หนึ่งบาทสิบสตางค์");
 
-        let result = crate::baht_text::baht_text::baht_text(1.01);
+        let result = crate::baht_text(1.01);
         assert_eq!(result, "หนึ่งบาทหนึ่งสตางค์");
 
-        let result = crate::baht_text::baht_text::baht_text(2.21);
+        let result = crate::baht_text(2.21);
         assert_eq!(result, "สองบาทยี่สิบเอ็ดสตางค์");
 
-        let result = crate::baht_text::baht_text::baht_text(4.99);
+        let result = crate::baht_text(4.99);
         assert_eq!(result, "สี่บาทเก้าสิบเก้าสตางค์");
 
-        let result = crate::baht_text::baht_text::baht_text(5.81);
+        let result = crate::baht_text(5.81);
         assert_eq!(result, "ห้าบาทแปดสิบเอ็ดสตางค์");
     }
 
     #[test]
     fn test_number_hundred_should_show_roi() {
-        let result = crate::baht_text::baht_text::baht_text(100.0);
+        let result = crate::baht_text(100.0);
         assert_eq!(result, "หนึ่งร้อยบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(101.0);
+        let result = crate::baht_text(101.0);
         assert_eq!(result, "หนึ่งร้อยหนึ่งบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(200.0);
+        let result = crate::baht_text(200.0);
         assert_eq!(result, "สองร้อยบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(201.0);
+        let result = crate::baht_text(201.0);
         assert_eq!(result, "สองร้อยหนึ่งบาทถ้วน");
     }
 
     #[test]
     fn test_number_thousand_should_show_pan() {
-        let result = crate::baht_text::baht_text::baht_text(1000.0);
+        let result = crate::baht_text(1000.0);
         assert_eq!(result, "หนึ่งพันบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(1001.0);
+        let result = crate::baht_text(1001.0);
         assert_eq!(result, "หนึ่งพันหนึ่งบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(2000.0);
+        let result = crate::baht_text(2000.0);
         assert_eq!(result, "สองพันบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(2001.0);
+        let result = crate::baht_text(2001.0);
         assert_eq!(result, "สองพันหนึ่งบาทถ้วน");
     }
 
     #[test]
     fn test_number_ten_thousand_should_show_muern() {
-        let result = crate::baht_text::baht_text::baht_text(10000.0);
+        let result = crate::baht_text(10000.0);
         assert_eq!(result, "หนึ่งหมื่นบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(10001.0);
+        let result = crate::baht_text(10001.0);
         assert_eq!(result, "หนึ่งหมื่นหนึ่งบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(20000.0);
+        let result = crate::baht_text(20000.0);
         assert_eq!(result, "สองหมื่นบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(20001.0);
+        let result = crate::baht_text(20001.0);
         assert_eq!(result, "สองหมื่นหนึ่งบาทถ้วน");
     }
 
     #[test]
     fn test_number_hundred_thousand_should_show_saan() {
-        let result = crate::baht_text::baht_text::baht_text(100000.0);
+        let result = crate::baht_text(100000.0);
         assert_eq!(result, "หนึ่งแสนบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(100001.0);
+        let result = crate::baht_text(100001.0);
         assert_eq!(result, "หนึ่งแสนหนึ่งบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(200000.0);
+        let result = crate::baht_text(200000.0);
         assert_eq!(result, "สองแสนบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(200001.0);
+        let result = crate::baht_text(200001.0);
         assert_eq!(result, "สองแสนหนึ่งบาทถ้วน");
     }
 
     #[test]
     fn test_number_million_should_show_larn() {
-        let result = crate::baht_text::baht_text::baht_text(1000000.0);
+        let result = crate::baht_text(1000000.0);
         assert_eq!(result, "หนึ่งล้านบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(1000001.0);
+        let result = crate::baht_text(1000001.0);
         assert_eq!(result, "หนึ่งล้านหนึ่งบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(2000000.0);
+        let result = crate::baht_text(2000000.0);
         assert_eq!(result, "สองล้านบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(2000001.0);
+        let result = crate::baht_text(2000001.0);
         assert_eq!(result, "สองล้านหนึ่งบาทถ้วน");
     }
 
     #[test]
     fn test_number_multiple_million_should_show_multiple_laan() {
-        let result = crate::baht_text::baht_text::baht_text(12000000.0);
+        let result = crate::baht_text(12000000.0);
         assert_eq!(result, "สิบสองล้านบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(12000000.00);
+        let result = crate::baht_text(12000000.00);
         assert_eq!(result, "สิบสองล้านบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(21000000.0);
+        let result = crate::baht_text(21000000.0);
         assert_eq!(result, "ยี่สิบเอ็ดล้านบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(21000000.00);
+        let result = crate::baht_text(21000000.00);
         assert_eq!(result, "ยี่สิบเอ็ดล้านบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(51000000000000.51);
+        let result = crate::baht_text(51000000000000.51);
         assert_eq!(result, "ห้าสิบเอ็ดล้านล้านบาทห้าสิบเอ็ดสตางค์");
 
-        let result = crate::baht_text::baht_text::baht_text(10000000680000.51);
+        let result = crate::baht_text(10000000680000.51);
         assert_eq!(result, "สิบล้านล้านหกแสนแปดหมื่นบาทห้าสิบเอ็ดสตางค์");
     }
 
     #[test]
     fn test_negative_number_prefix_should_display_lob() {
-        let result = crate::baht_text::baht_text::baht_text(-1.0);
+        let result = crate::baht_text(-1.0);
         assert_eq!(result, "ลบหนึ่งบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(-10.0);
+        let result = crate::baht_text(-10.0);
         assert_eq!(result, "ลบสิบบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(-100.0);
+        let result = crate::baht_text(-100.0);
         assert_eq!(result, "ลบหนึ่งร้อยบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(-1000.0);
+        let result = crate::baht_text(-1000.0);
         assert_eq!(result, "ลบหนึ่งพันบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(-10000.0);
+        let result = crate::baht_text(-10000.0);
         assert_eq!(result, "ลบหนึ่งหมื่นบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(-100000.0);
+        let result = crate::baht_text(-100000.0);
         assert_eq!(result, "ลบหนึ่งแสนบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(-1000000.0);
+        let result = crate::baht_text(-1000000.0);
         assert_eq!(result, "ลบหนึ่งล้านบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(-10000000.0);
+        let result = crate::baht_text(-10000000.0);
         assert_eq!(result, "ลบสิบล้านบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(-100000000.0);
+        let result = crate::baht_text(-100000000.0);
         assert_eq!(result, "ลบหนึ่งร้อยล้านบาทถ้วน");
 
-        let result = crate::baht_text::baht_text::baht_text(-1000000000.0);
+        let result = crate::baht_text(-1000000000.0);
         assert_eq!(result, "ลบหนึ่งพันล้านบาทถ้วน");
 
     }
